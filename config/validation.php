@@ -27,7 +27,13 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
        
        
     );
-   
+    foreach ($ovens as $row) {
+        
+            $id = $row['user_id'];
+            if($id===$data['idNumber']){
+                $errors['idNumber']= 'მომხმარებელი რეგისტრირებულია';
+            }
+        }
   
     if (!$data['firstname'] || !preg_match('/^[\x{10D0}-\x{10F5}]+$/u', $data['firstname'] ) || strlen($data['firstname']) < 3) {
             $errors['firstname'] =  'შეავსეთ. ქართული ასოები მინიმუმ 3';
@@ -94,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $allowed_ext = array("jpg" => "jpg",
                             "jpeg" => "jpeg",
                             "gif" => "gif",
-                            "png" => "png");
+                            "PNG" => "png");
 
     if (!is_dir('images')) {
         mkdir('images');
