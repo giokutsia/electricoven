@@ -11,6 +11,7 @@
     
 </head>
 <body>
+<a  href="registrated.php" class="link_button">ღუმლების ნახვა</a>
     <div class="main-div">
         <div class="reg">
             <div class="default-info">
