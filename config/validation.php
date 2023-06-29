@@ -67,20 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $errors['productname'] = 'შეიყვანეთ';
     }
     
-    //validation for date with format dd/mm/yy
-    // foreach ($ovens as $row) {
-    //     // Access the values of each row
-    //     $id = $row['user_id'];
-    //     if($id===$data['idNumber']){
-    //         $errors['idNumber']= 'მომხმარებელი რეგისტრირებულია';
-    //     }
-    //     // ...
-    
-    //     // Display the values or use them as needed
-    //     echo "ID: " . $id . "<br>";
-        
-    //     // ...
-    // }
+
     if (!preg_match('^(?:(?:0[1-9]|1\d|2[0-8])\/(?:0[1-9]|1[0-2])|(?:29|30)\/(?:0[13-9]|1[0-2])|31\/(?:0[13578]|1[02]))\/\d{2}$^', $data['idDate'])) {
         
        $errors['idDate'] = 'შეიყვანეთ თარიღი DD/MM/YY';
